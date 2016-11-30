@@ -16,6 +16,7 @@
 		9E6144E01DEE626800E610A2 /* CatPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6144DF1DEE626800E610A2 /* CatPhotoCell.swift */; };
 		9EC4EFFA1DEE6CE200535A41 /* CatDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC4EFF91DEE6CE200535A41 /* CatDetailViewController.swift */; };
 		9EC4EFFC1DEE748B00535A41 /* MyCatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC4EFFB1DEE748B00535A41 /* MyCatCell.swift */; };
+		9EC4F0051DEE9DBD00535A41 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9EC4F0031DEE9DBD00535A41 /* Model.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		9E6144DF1DEE626800E610A2 /* CatPhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatPhotoCell.swift; sourceTree = "<group>"; };
 		9EC4EFF91DEE6CE200535A41 /* CatDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatDetailViewController.swift; sourceTree = "<group>"; };
 		9EC4EFFB1DEE748B00535A41 /* MyCatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCatCell.swift; sourceTree = "<group>"; };
+		9EC4F0041DEE9DBD00535A41 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				9E6144CC1DEE5EFE00E610A2 /* MyCatsViewController.swift */,
 				9E6144DF1DEE626800E610A2 /* CatPhotoCell.swift */,
 				9E6144CE1DEE5EFE00E610A2 /* Main.storyboard */,
+				9EC4F0031DEE9DBD00535A41 /* Model.xcdatamodeld */,
 				9E6144D11DEE5EFE00E610A2 /* Assets.xcassets */,
 				9E6144D31DEE5EFE00E610A2 /* LaunchScreen.storyboard */,
 				9E6144D61DEE5EFE00E610A2 /* Info.plist */,
@@ -151,6 +154,7 @@
 				9E6144CD1DEE5EFE00E610A2 /* MyCatsViewController.swift in Sources */,
 				9EC4EFFC1DEE748B00535A41 /* MyCatCell.swift in Sources */,
 				9E6144C91DEE5EFE00E610A2 /* AppDelegate.swift in Sources */,
+				9EC4F0051DEE9DBD00535A41 /* Model.xcdatamodeld in Sources */,
 				9EC4EFFA1DEE6CE200535A41 /* CatDetailViewController.swift in Sources */,
 				9E6144CB1DEE5EFE00E610A2 /* CatPhotosViewController.swift in Sources */,
 				9E6144E01DEE626800E610A2 /* CatPhotoCell.swift in Sources */,
@@ -316,6 +320,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9EC4F0031DEE9DBD00535A41 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9EC4F0041DEE9DBD00535A41 /* Model.xcdatamodel */,
+			);
+			currentVersion = 9EC4F0041DEE9DBD00535A41 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9E6144BD1DEE5EFE00E610A2 /* Project object */;
 }

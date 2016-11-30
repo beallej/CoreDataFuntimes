@@ -7,14 +7,16 @@
 //
 
 import UIKit
-
+import CoreData
 class MyCatsViewController: UITableViewController {
     
-    
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     //TODO: COREDATA
-    let cats = [Cat()]
+    //let cats = [Cat()]
+    var cats : [Cat] = []
 
     override func viewDidLoad() {
+        self.fetchCats()
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -42,14 +44,28 @@ class MyCatsViewController: UITableViewController {
 
         
     }
+    
+    func fetchCats(){
+        //create a fetch request, telling it about the entity
+        let fetchRequest: NSFetchRequest<Cat> = Cat.fetchRequest()
+        
+        do {
+            //go get the results
+            cats = try appDelegate.getContext().fetch(fetchRequest)
+            
+            } catch {
+            print("Error with request: \(error)")
+        }
+    }
+    
  
     
 }
 
 
 //DELETE ME WHEN WE DO IT THE CORE DATA WAY
-class Cat {
+/*class Cat {
     var name = "Peaches"
     var photo = "peaches"
     var toys : [String] = []
-}
+}*/

@@ -7,10 +7,10 @@
 //
 
 import UIKit
-
+import CoreData
 class CatPhotosViewController: UICollectionViewController {
     
-    
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     //I know this is terrible
     let cats = [ "apricot", "bandit", "bobthecat", "bolt", "breezy", "callie", "cocoa", "dottie", "fortune", "fred", "gabriel", "ginger", "gozer", "lexy", "mack", "marshmallow", "misty", "patches", "peaches", "pepper", "pickles", "princess", "pumpkin", "rascal", "shadow", "smokey", "snowball", "socks", "speckles", "sunny", "tabitha", "tubbs", "xerxes"]
 
@@ -56,9 +56,19 @@ class CatPhotosViewController: UICollectionViewController {
     }
     
     func addCatToGarden(catName: String, catPhoto: String) {
-        //TODO: WRITE THIS WITH CORE DATA!!!
-    }
+        let managedObjectContext = appDelegate.getContext()
+        let catEntity = NSEntityDescription.insertNewObject(forEntityName: "Cat", into: managedObjectContext) as! Cat
+        catEntity.name = catName
+        catEntity.photoName = catPhoto
+        do {
+            try managedObjectContext.save()
+        } catch {
+            fatalError("Failure to save context: \(error)")
+        }
 
+    }
+    
+    
 
 }
 

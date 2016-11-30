@@ -16,7 +16,7 @@ class MyCatCell : UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     var cat : Cat?
     func setCat(cat : Cat){
-        catPhoto.image = UIImage(named: cat.photo)
+        catPhoto.image = UIImage(named: cat.photoName!)
         nameLabel.text = cat.name
     }
 }

@@ -8,10 +8,13 @@
 
 import Foundation
 import UIKit
+import CoreData
+
 class CatDetailViewController : UIViewController {
     
     var cat : Cat!
-    
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+
     @IBOutlet weak var catPhoto: UIImageView!
     @IBOutlet weak var catName: UILabel!
     @IBOutlet weak var catToyLabel: UITextView!
@@ -20,7 +23,7 @@ class CatDetailViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        catPhoto.image = UIImage(named: cat.photo)
+        catPhoto.image = UIImage(named: cat.photoName!)
         catName.text = cat.name
         self.loadCatToys()
     }
@@ -44,14 +47,27 @@ class CatDetailViewController : UIViewController {
     
     func addToy(toyName: String){
         
-        
-        //TODO: CORE DATA
-    
+        let managedObjectContext = appDelegate.getContext()
+        let toyEntity = NSEntityDescription.insertNewObject(forEntityName: "Toy", into: managedObjectContext) as! Toy
+        toyEntity.name = toyName
+        cat.addToToys(toyEntity)
+        toyEntity.addToCats(cat)
+        do {
+            try managedObjectContext.save()
+        } catch {
+            fatalError("Failure to save context: \(error)")
+        }
         loadCatToys() //also not 100% sure this will work
     }
     
+    
+    
     func loadCatToys(){
-        catToyLabel.text = "Favorite Toys: \(cat.toys.joined(separator: ", "))"
+        let toyEntities : NSSet = cat.toys!
+        let toyNames = toyEntities.map{return ($0 as! Toy).name!}
+        var toyText = "Favorite Toys: "
+        toyText += toyNames.joined(separator: ", ")
+        catToyLabel.text = toyText
     }
     
 }
