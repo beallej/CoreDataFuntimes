@@ -11,7 +11,7 @@ import CoreData
 class CatPhotosViewController: UICollectionViewController {
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    //I know this is terrible
+    
     let cats = [ "apricot", "bandit", "bobthecat", "bolt", "breezy", "callie", "cocoa", "dottie", "fortune", "fred", "gabriel", "ginger", "gozer", "lexy", "mack", "marshmallow", "misty", "patches", "peaches", "pepper", "pickles", "princess", "pumpkin", "rascal", "shadow", "smokey", "snowball", "socks", "speckles", "sunny", "tabitha", "tubbs", "xerxes"]
 
     override func viewDidLoad() {

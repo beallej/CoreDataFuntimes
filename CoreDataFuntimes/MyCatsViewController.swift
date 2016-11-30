@@ -11,8 +11,7 @@ import CoreData
 class MyCatsViewController: UITableViewController {
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    //TODO: COREDATA
-    //let cats = [Cat()]
+ 
     var cats : [Cat] = []
 
     override func viewDidLoad() {
@@ -62,10 +61,3 @@ class MyCatsViewController: UITableViewController {
     
 }
 
-
-//DELETE ME WHEN WE DO IT THE CORE DATA WAY
-/*class Cat {
-    var name = "Peaches"
-    var photo = "peaches"
-    var toys : [String] = []
-}*/

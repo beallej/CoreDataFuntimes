@@ -57,7 +57,7 @@ class CatDetailViewController : UIViewController {
         } catch {
             fatalError("Failure to save context: \(error)")
         }
-        loadCatToys() //also not 100% sure this will work
+        loadCatToys() 
     }
     
     
