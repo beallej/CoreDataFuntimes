@@ -56,16 +56,9 @@ class CatPhotosViewController: UICollectionViewController {
     }
     
     func addCatToGarden(catName: String, catPhoto: String) {
-        let managedObjectContext = appDelegate.getContext()
-        let catEntity = NSEntityDescription.insertNewObject(forEntityName: "Cat", into: managedObjectContext) as! Cat
-        catEntity.name = catName
-        catEntity.photoName = catPhoto
-        do {
-            try managedObjectContext.save()
-        } catch {
-            fatalError("Failure to save context: \(error)")
-        }
-
+        
+        //TODO: SAVE CAT WITH CORE DATA
+        
     }
     
     

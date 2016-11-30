@@ -47,17 +47,8 @@ class CatDetailViewController : UIViewController {
     
     func addToy(toyName: String){
         
-        let managedObjectContext = appDelegate.getContext()
-        let toyEntity = NSEntityDescription.insertNewObject(forEntityName: "Toy", into: managedObjectContext) as! Toy
-        toyEntity.name = toyName
-        cat.addToToys(toyEntity)
-        toyEntity.addToCats(cat)
-        do {
-            try managedObjectContext.save()
-        } catch {
-            fatalError("Failure to save context: \(error)")
-        }
-        loadCatToys() 
+        //TODO: ADD TOY TO CAT AND UPDATE DISPLAY USING CORE DATA
+        loadCatToys()
     }
     
     

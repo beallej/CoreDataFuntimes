@@ -45,16 +45,9 @@ class MyCatsViewController: UITableViewController {
     }
     
     func fetchCats(){
-        //create a fetch request, telling it about the entity
-        let fetchRequest: NSFetchRequest<Cat> = Cat.fetchRequest()
         
-        do {
-            //go get the results
-            cats = try appDelegate.getContext().fetch(fetchRequest)
-            
-            } catch {
-            print("Error with request: \(error)")
-        }
+        //TODO: SET 'cats' TO OUR ACTUAL CATS BY FETCHING THEM FROM CORE DATA
+        
     }
     
  
