@@ -48,7 +48,7 @@ class CatDetailViewController : UIViewController {
     func addToy(toyName: String){
         
         let managedObjectContext = appDelegate.getContext()
-        let toyEntity = NSEntityDescription.insertNewObject(forEntityName: "Toy", into: managedObjectContext) as! Toy
+        let toyEntity = Toy(context: managedObjectContext)
         toyEntity.name = toyName
         cat.addToToys(toyEntity)
         toyEntity.addToCats(cat)
