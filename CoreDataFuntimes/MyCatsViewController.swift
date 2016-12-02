@@ -15,9 +15,13 @@ class MyCatsViewController: UITableViewController {
     var cats : [Cat] = []
 
     override func viewDidLoad() {
-        self.fetchCats()
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        cats = self.fetchCats()
+        self.tableView.reloadData()
+        super.viewDidAppear(animated)
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,10 +48,10 @@ class MyCatsViewController: UITableViewController {
         
     }
     
-    func fetchCats(){
+    func fetchCats() -> [Cat]{
         
         //TODO: SET 'cats' TO OUR ACTUAL CATS BY FETCHING THEM FROM CORE DATA
-        
+        return cats
     }
     
  
