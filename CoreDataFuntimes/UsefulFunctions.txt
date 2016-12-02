@@ -1,0 +1,105 @@
+func saveNewEntity (attributeValue: typeOfAttribute) {
+
+
+    let context = getContext()
+
+    //insert new entity
+    let entity = Entity(context: context)
+
+    //set the entity value(s)
+    entity.attribute = "attributeValue"
+
+
+    //save the object
+    do {
+        try context.save()
+    } catch let error as NSError  {
+        print("Could not save \(error), \(error.userInfo)")
+    } catch {
+
+    }
+}
+
+
+func getContext () -> NSManagedObjectContext {
+    let appDelegate = UIApplication.shared().delegate as! AppDelegate
+    return appDelegate.persistentContainer.viewContext
+}
+
+func fetchEntities() -> [Entity] {
+
+    var results = [Entity]()
+
+    //create a fetch request, telling it about the entity
+    let fetchRequest: NSFetchRequest<Entity> = Entity.fetchRequest()
+
+    do {
+        //go get the results
+        results = try appDelegate.getContext().fetch(fetchRequest)
+
+    } catch {
+        print("Error with request: \(error)")
+    }
+    return results
+}
+
+
+func saveNewEntityWithRelationship(otherEntityAttribute: AttributeType, firstEntity: Entity){
+
+    //get context
+    let managedObjectContext = getContext()
+
+    //insert new other entity, set values
+    let otherEntity = OtherEntity(context: managedObjectContext)
+    otherEntity.attribute = otherEntityAttribute
+
+    //add to first entity
+    firstEntity.addToOtherEntity(otherEntity)
+
+    //add first entity to other entity
+    otherEntity.addToFirstEntity(firstEntity)
+
+    //save context
+    do {
+        try managedObjectContext.save()
+    } catch {
+        fatalError("Failure to save context: \(error)")
+    }
+}
+
+func deleteEntity(entity: Entity) {
+
+    //get context
+    let managedObjectContext = getContext()
+    managedObjectContext.delete(entity)
+
+    //save context
+    do {
+        try managedObjectContext.save()
+    } catch {
+        fatalError("Failure to save context: \(error)")
+    }
+
+}
+
+//for when you maybe only want to fetch certain instances of an entity
+func fetchEntityWithPredicate(entityKey: String, entityValue: TypeOfEntity) -> [Entity] {
+    var results = [Entity]()
+
+    //create a fetch request, telling it about the entity
+    let fetchRequest: NSFetchRequest<Entity> = Entity.fetchRequest()
+    fetchRequest.predicate = NSPredicate(format: “entityKey == %@“, entityValue)
+    //ex.
+    //fetchRequest.predicate = NSPredicate(format: "name == %@", “Bob”)
+
+    do {
+        //go get the results
+        results = try appDelegate.getContext().fetch(fetchRequest)
+
+    } catch {
+        print("Error with request: \(error)")
+    }
+    return results
+
+}
+

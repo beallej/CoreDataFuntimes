@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E56273B1DF1C8AC00305554 /* UsefulFunctions.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9E56273A1DF1C8AC00305554 /* UsefulFunctions.txt */; };
 		9E6144C91DEE5EFE00E610A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6144C81DEE5EFE00E610A2 /* AppDelegate.swift */; };
 		9E6144CB1DEE5EFE00E610A2 /* CatPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6144CA1DEE5EFE00E610A2 /* CatPhotosViewController.swift */; };
 		9E6144CD1DEE5EFE00E610A2 /* MyCatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6144CC1DEE5EFE00E610A2 /* MyCatsViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9E56273A1DF1C8AC00305554 /* UsefulFunctions.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UsefulFunctions.txt; sourceTree = "<group>"; };
 		9E6144C51DEE5EFE00E610A2 /* CoreDataFuntimes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataFuntimes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E6144C81DEE5EFE00E610A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9E6144CA1DEE5EFE00E610A2 /* CatPhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatPhotosViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				9E6144D61DEE5EFE00E610A2 /* Info.plist */,
 				9EC4EFF91DEE6CE200535A41 /* CatDetailViewController.swift */,
 				9EC4EFFB1DEE748B00535A41 /* MyCatCell.swift */,
+				9E56273A1DF1C8AC00305554 /* UsefulFunctions.txt */,
 			);
 			path = CoreDataFuntimes;
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 			files = (
 				9E6144D51DEE5EFE00E610A2 /* LaunchScreen.storyboard in Resources */,
 				9E6144D21DEE5EFE00E610A2 /* Assets.xcassets in Resources */,
+				9E56273B1DF1C8AC00305554 /* UsefulFunctions.txt in Resources */,
 				9E6144D01DEE5EFE00E610A2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
